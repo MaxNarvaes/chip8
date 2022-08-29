@@ -1,0 +1,253 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Mon Aug 29 07:00:22 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/mana/Documents/chip8
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# environment
+MAVEN_HOME = /Users/mana/.sdkman/candidates/maven/current
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /Users/mana/.sdkman/candidates/maven/current/bin:/Users/mana/.sdkman/candidates/java/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# environment
+SDKMAN_DIR = /Users/mana/.sdkman
+# environment
+SDKMAN_CANDIDATES_API = https://api.sdkman.io/2
+# environment
+LaunchInstanceID = B74DF449-22D4-40C4-844A-D500304D1DA1
+# environment
+SDKMAN_PLATFORM = darwinx64
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `Makefile', line 3)
+INCLUDE_PATHS = -I/usr/local/include
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.S2Xh9ezLpk/Listeners
+# automatic
+%F = $(notdir $%)
+# makefile (from `Makefile', line 1)
+OBJS = $(wildcard */*.c)
+# environment
+PWD = /Users/mana/Documents/chip8
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 6)
+LINKER_FLAGS = -lSDL2 -lSDL2main
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/mana
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/mana/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
+# environment
+LOGNAME = mana
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# environment
+SDKMAN_VERSION = 5.16.0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 2
+# makefile (from `Makefile', line 2)
+CC = gcc -g -v
+# environment
+JAVA_HOME = /Users/mana/.sdkman/candidates/java/current
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = mana
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 4)
+INCLUDE = -I ./include
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/4n/szcxjzl97_sgrd6ms55dzf9r0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/mana/Library/Application Support/Code/1.70.2-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.1049143.1049149
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+SDKMAN_CANDIDATES_DIR = /Users/mana/.sdkman/candidates
+# environment
+LC_ALL = C
+# makefile (from `Makefile', line 5)
+LIBRARY_PATHS = -L/usr/local/lib
+# environment
+SECURITYSESSIONID = 186a3
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# makefile (from `Makefile', line 7)
+OBJ_NAME = main
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 409
+# variable set hash-table stats:
+# Load=74/1024=7%, Rehash=0, Collisions=7/107=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# Makefile (device 16777225, inode 1553417): could not be opened.
+# include (device 16777225, inode 1608469): 9 files, no impossibilities.
+# main.dSYM (device 16777225, inode 1597748): 3 files, no impossibilities.
+# . (device 16777225, inode 1547688): 11 files, no impossibilities.
+# main (device 16777225, inode 1727715): could not be opened.
+# build (device 16777225, inode 1553058): 2 files, no impossibilities.
+# bin (device 16777225, inode 1553024): 6 files, no impossibilities.
+# src (device 16777225, inode 1553097): 8 files, no impossibilities.
+
+# 39 files, no impossibilities in 8 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all:
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/17=18%
+#  commands to execute (from `Makefile', line 10):
+	$(CC) -o $(OBJ_NAME) ${INCLUDE} $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(LINKER_FLAGS) $(OBJS)
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-25 22:13:06
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=4/1024=0%, Rehash=0, Collisions=0/18=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Mon Aug 29 07:00:22 2022
+
+ 

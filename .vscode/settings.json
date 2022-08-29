@@ -1,0 +1,8 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "chip8memory.h": "c",
+        "chip8stack.h": "c",
+        "chip8registers.h": "c"
+    }
+}

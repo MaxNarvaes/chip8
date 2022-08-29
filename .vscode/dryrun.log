@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/mana/Documents/chip8'
+gcc -g -v -o main -I ./include -I/usr/local/include -L/usr/local/lib -lSDL2 -lSDL2main src/chip8.c src/chip8keyboard.c src/chip8memory.c src/chip8screen.c src/chip8stack.c src/main.c
+make: Leaving directory `/Users/mana/Documents/chip8'
+ 
