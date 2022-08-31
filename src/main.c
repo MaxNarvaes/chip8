@@ -2,6 +2,11 @@
 #include <stdbool.h>
 #include <SDL2/SDL.h>
 #include "chip8.h"
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 
 const char keyboard_map[CHIP8_TOTAL_KEYS] = {
     SDLK_0, SDLK_1, SDLK_2, SDLK_3, SDLK_4, SDLK_5, SDLK_6,
@@ -14,6 +19,9 @@ int main(int argc, char const *argv[])
 
     struct chip8 chip8;
     chip8_init(&chip8);
+
+    chip8.registers.delay_timer = 255;
+    chip8.registers.sound_timer = 255;
 
     chip8_screen_draw_sprite(&chip8.screen, 0, 0, &chip8.memory.memory[0x00], 5);
 
@@ -62,8 +70,6 @@ while (!quit){
         {
             if (chip8_screen_is_set(&chip8.screen, x, y))
             {
-                //printf("%i ", x);
-                //printf("%i \n", y);
                 SDL_Rect rectangle;
                 rectangle.x = x * CHIP8_WINDOW_SCALE;
                 rectangle.y = y * CHIP8_WINDOW_SCALE;
@@ -74,6 +80,28 @@ while (!quit){
         }
     }
     SDL_RenderPresent(renderer);
+
+    printf("%d", chip8.registers.delay_timer);
+
+    if (chip8.registers.delay_timer > 0)
+    {
+        printf("sleep \n");
+        int delay = 100;
+        //sleep:
+        #ifdef _WIN32
+        Sleep(pollingDelay);
+        #else
+        usleep(delay * 1000);  /* sleep for 100 milliSeconds */
+        #endif
+        chip8.registers.delay_timer -= 1;
+    }
+
+    // TODO: implementar mejor sonido
+    if (chip8.registers.sound_timer > 0){
+        printf("\a");
+        chip8.registers.sound_timer -= 1;
+    }
+    
 }
     SDL_DestroyWindow(window);
     return 0;
