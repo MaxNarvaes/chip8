@@ -16,14 +16,40 @@ const char keyboard_map[CHIP8_TOTAL_KEYS] = {
 
 int main(int argc, char const *argv[])
 {
+    if (argc < 2)
+    {
+        printf("You must provide a file to lead.");
+        return -1;
+    }
+
+    const char* filename = argv[1];
+    printf("Filename to read is %s\n", filename);
+
+    FILE* file = fopen(filename, "rb");
+    if (!file)
+    {
+        printf("failed to open file");
+        return -1;
+    }
+    
+    fseek(file, 0, SEEK_END); //go to end of file
+    long size = ftell(file); // get current position = file size
+    fseek(file, 0, SEEK_SET); //set pointer to begining of file
+
+    char buffer[size];
+    int result = fread(buffer, size, 1, file);
+    if (result != 1)
+    {
+        printf("failed to lead file");
+        return -1;
+    }
 
     struct chip8 chip8;
     chip8_init(&chip8);
+    chip8_load(&chip8, buffer, size);
+    chip8_keyboard_set_map(&chip8.keyboard, keyboard_map);
 
-    chip8.registers.delay_timer = 255;
-    chip8.registers.sound_timer = 255;
 
-    chip8_screen_draw_sprite(&chip8.screen, 0, 0, &chip8.memory.memory[0x00], 5);
 
     SDL_Init(SDL_INIT_EVERYTHING);
     SDL_Window* window = SDL_CreateWindow(
@@ -81,8 +107,6 @@ while (!quit){
     }
     SDL_RenderPresent(renderer);
 
-    printf("%d", chip8.registers.delay_timer);
-
     if (chip8.registers.delay_timer > 0)
     {
         printf("sleep \n");
@@ -98,10 +122,13 @@ while (!quit){
 
     // TODO: implementar mejor sonido
     if (chip8.registers.sound_timer > 0){
-        printf("\a");
+        //printf("\a");
         chip8.registers.sound_timer -= 1;
     }
-    
+
+    unsigned short opcode = chip8_memory_get_short(&chip8.memory, chip8.registers.program_counter);
+    chip8.registers.program_counter += 2;
+    chip8_exec(&chip8, opcode);
 }
     SDL_DestroyWindow(window);
     return 0;
